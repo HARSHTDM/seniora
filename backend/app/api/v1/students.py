@@ -22,3 +22,7 @@ def add_student(name: str, branch: str, skills: str, db: Session = Depends(get_d
 @router.get("/")
 def get_students(db: Session = Depends(get_db)):
     return db.query(Student).all()
+
+@router.get("/placed")
+def placed_students(db: Session = Depends(get_db)):
+    return db.query(Student).filter(Student.placed == "Yes").all()

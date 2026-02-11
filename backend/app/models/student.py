@@ -7,5 +7,6 @@ class Student(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     branch = Column(String)
-    skills = Column(String)   # "Python,React,SQL"
-    placed = Column(String, default="No")
+    skills = Column(String)
+    placed = Column(String, default="No")     # Yes / No
+    placed_company = Column(String, nullable=True)
